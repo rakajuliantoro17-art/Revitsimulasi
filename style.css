@@ -13,7 +13,7 @@ body {
   background: var(--bg);
   color: var(--ink);
 }
-header, main { max-width: 1400px; margin: 0 auto; padding: 16px; }
+header, main { max-width: 1500px; margin: 0 auto; padding: 16px; }
 h1 { margin: 0 0 4px; font-size: 1.5rem; }
 header p { margin: 0; color: var(--muted); }
 h2 { font-size: 1.05rem; }
@@ -24,7 +24,8 @@ button {
 }
 button.ghost { background: transparent; color: var(--brand); }
 .wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
-table { border-collapse: collapse; width: 100%; min-width: 1500px; font-size: 0.875rem; }
+table { border-collapse: collapse; width: 100%; font-size: 0.875rem; }
+table.grid { min-width: 2100px; }
 th, td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
 th { background: #eef1f5; position: sticky; top: 0; white-space: nowrap; }
 td input, td select {
@@ -32,9 +33,22 @@ td input, td select {
   border: 1px solid var(--line); border-radius: 4px; background: #fff;
 }
 td input:disabled, td select:disabled { background: #f0f2f5; color: #9aa5b1; }
-td.n, tfoot td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.strong { background: #eff6ff; font-weight: 600; }
+td.strong2 { background: #f0fdf4; font-weight: 600; }
 td.note { color: var(--muted); font-size: 0.8rem; min-width: 220px; }
 tfoot td { font-weight: 600; background: #eef1f5; }
 .del { padding: 2px 9px; background: transparent; color: #c0392b; border-color: #e5b4ae; font-size: 1.1rem; }
 section { margin-top: 20px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 4px 16px 12px; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; }
+.cols section { margin-top: 20px; }
+table.mini td, table.mini th { padding: 6px 8px; }
+table.mini tr.sub td { font-weight: 600; background: #f1f5f9; }
+table.mini tr.total td { font-weight: 700; background: #fef3c7; color: #92400e; }
+table.mini tr.rab td { font-weight: 700; background: #dbeafe; color: #1e40af; }
+table.mini tr.netto td { font-weight: 700; background: #dcfce7; color: #166534; }
+table.mini tr.audit td { font-style: italic; color: var(--muted); }
+table.mini tr.audit-bad td { font-weight: 700; background: #fee2e2; color: #b91c1c; }
 .asumsi li { margin: 4px 0; color: var(--muted); }
+table.grid td select { min-width: 175px; }
+table.grid td input[type=text], table.grid td input[type=number] { min-width: 130px; }
